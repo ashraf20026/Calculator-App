@@ -4,5 +4,13 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Calculator-App/', // اسم الريبو
+  base: '/Calculator-App/',
+  build: {
+    rollupOptions: {
+      input: 'dev.html'
+    }
+  },
+  server: {
+    open: '/dev.html'
+  }
 })
